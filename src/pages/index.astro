@@ -1,0 +1,73 @@
+---
+import Base from '../layouts/Base.astro';
+
+const timeline = [
+  {
+    year: '20XX',
+    title: 'Placeholder role or project',
+    detail: 'Replace this with a real entry. See task: fill in real CV content.',
+  },
+];
+---
+
+<Base title="Jordan English">
+  <section class="about">
+    <h1>Jordan English</h1>
+    <p class="tagline">Placeholder tagline: one line describing what you do.</p>
+    <p>
+      Placeholder about paragraph. Replace with a short professional bio: what you
+      work on, what you're known for, what you're looking for (if anything).
+    </p>
+  </section>
+
+  <section class="timeline">
+    <h2>Timeline</h2>
+    <ol>
+      {
+        timeline.map((entry) => (
+          <li>
+            <span class="year">{entry.year}</span>
+            <span class="entry-title">{entry.title}</span>
+            <p class="detail">{entry.detail}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</Base>
+
+<style>
+  .tagline {
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+
+  .timeline ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .timeline li {
+    padding: 1rem 0;
+    border-top: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0.5rem 1rem;
+  }
+
+  .year {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .entry-title {
+    font-weight: 600;
+  }
+
+  .detail {
+    grid-column: 2;
+    margin: 0;
+    color: var(--muted);
+  }
+</style>
