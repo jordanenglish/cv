@@ -3,9 +3,74 @@ import Base from '../layouts/Base.astro';
 
 const timeline = [
   {
-    year: '20XX',
-    title: 'Placeholder role or project',
-    detail: 'Replace this with a real entry. See task: fill in real CV content.',
+    year: '2026-present',
+    title: 'Senior Site Reliability Engineer, ID.me',
+    detail: 'Authoring standardized Terraform modules org-wide and cutting workspace plan/apply runtime ~45% through dependency and state optimization.',
+  },
+  {
+    year: '2024-2026',
+    title: 'Cloud Engineer IV, ID.me',
+    detail: 'Led platform migration from Nomad to Kubernetes across 5 production GKE clusters and Terraform Enterprise from VMs to Kubernetes with full GitOps and observability.',
+  },
+  {
+    year: '2022-2024',
+    title: 'Cloud Engineer III, ID.me',
+    detail: 'Operated Vault, Consul, and Nomad across GCP and AWS; built an artifact management platform on Kubernetes from the ground up.',
+  },
+  {
+    year: '2020-2022',
+    title: 'Linux Engineer, U.S. Office of Personnel Management',
+    detail: 'Contractor via Business Operational Concepts. Supported RHEL/CentOS and Azure hybrid infrastructure with Puppet and Ansible.',
+  },
+  {
+    year: '2019-2020',
+    title: 'Senior Linux Systems Administrator, U.S. Office of Personnel Management',
+    detail: 'Contractor via Business Operational Concepts. Linux team lead, Tier 3 support, Red Hat Satellite and Identity Manager administration.',
+  },
+  {
+    year: '2018-2019',
+    title: 'Linux Systems Administrator, U.S. Office of Personnel Management',
+    detail: 'Contractor via Business Operational Concepts. Tier 3 RHEL support with configuration management via Puppet and Ansible.',
+  },
+  {
+    year: '2017-2018',
+    title: 'Linux Administrator, U.S. Office of Personnel Management',
+    detail: 'Contractor via CSRA. Tier 3 RHEL support and centralized host/user management with Red Hat Satellite.',
+  },
+  {
+    year: '2016-2017',
+    title: 'Associate Linux Administrator, U.S. Office of Personnel Management',
+    detail: 'Contractor via CSRA. Tier 3 RHEL support and centralized host/user management with Red Hat Satellite.',
+  },
+  {
+    year: '2015-2016',
+    title: 'NOC Systems Administrator, U.S. Office of Personnel Management',
+    detail: 'Contractor via Business Operational Concepts. Tier 2 support across Windows and Linux servers.',
+  },
+  {
+    year: '2015',
+    title: 'Network Administrator, Secura Desktop Management',
+    detail: 'Managed Windows/Linux servers and workstations; applied network hardening and backup solutions.',
+  },
+  {
+    year: '2014-2015',
+    title: 'Systems Administrator, Wellness Works Counseling',
+    detail: 'Managed Unix/Linux/Windows infrastructure with risk-based network segmentation and remote access via OpenVPN/IPsec.',
+  },
+  {
+    year: '2014',
+    title: 'IT Work Study, Butler County Community College',
+    detail: 'Helpdesk support and PC imaging; upgraded classroom workstations to a Citrix thin-client environment.',
+  },
+  {
+    year: '2013-2014',
+    title: 'Certified Easy Tech Associate, Staples',
+    detail: 'Customer PC diagnostics, malware removal, and hardware repair.',
+  },
+  {
+    year: '2009-2013',
+    title: 'Lead Installation Technician, Kb Port, LLC',
+    detail: 'Installed and managed Linux servers and Windows workstations, including AV/security equipment.',
   },
 ];
 ---
@@ -13,10 +78,20 @@ const timeline = [
 <Base title="Jordan English">
   <section class="about">
     <h1>Jordan English</h1>
-    <p class="tagline">Placeholder tagline: one line describing what you do.</p>
+    <p class="tagline">Senior Site Reliability Engineer</p>
     <p>
-      Placeholder about paragraph. Replace with a short professional bio: what you
-      work on, what you're known for, what you're looking for (if anything).
+      Senior SRE with 10+ years of progressive infrastructure experience, including
+      4+ years at ID.me building and operating the core platform that supports
+      identity verification at scale. I specialize in container orchestration,
+      secrets management, service mesh, and infrastructure as code across multi-cloud
+      environments (GKE, GCP, AWS), with deep hands-on experience in Kubernetes,
+      Vault, Consul, Nomad, and Terraform Enterprise.
+    </p>
+    <p>
+      I'm driven by the SRE philosophy: reduce toil through automation, build
+      reliability through observability, and improve systems through rigorous
+      post-incident learning. Beyond the technical work, I care about mentorship and
+      helping engineers navigate complex systems and deliver work they're proud of.
     </p>
   </section>
 
@@ -52,13 +127,14 @@ const timeline = [
     padding: 1rem 0;
     border-top: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
     display: grid;
-    grid-template-columns: 5rem 1fr;
+    grid-template-columns: 7rem 1fr;
     gap: 0.5rem 1rem;
   }
 
   .year {
     color: var(--muted);
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
   .entry-title {
