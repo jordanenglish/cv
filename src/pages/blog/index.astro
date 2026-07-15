@@ -8,6 +8,7 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 ---
 
 <Base title="Blog">
+  <p class="prompt">$ ls blog/</p>
   <h1>Blog</h1>
   <ul class="post-list">
     {
@@ -29,6 +30,12 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 </Base>
 
 <style>
+  .prompt {
+    color: var(--accent);
+    margin: 0 0 0.25rem;
+    font-size: 0.875rem;
+  }
+
   .post-list {
     list-style: none;
     padding: 0;
