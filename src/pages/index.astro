@@ -33,7 +33,7 @@ const timeline = [
 <Base title="Jordan English">
   <section class="about">
     <p class="prompt">$ whoami</p>
-    <h1>Jordan English</h1>
+    <h1>Jordan English<span class="cursor" aria-hidden="true"></span></h1>
     <p class="tagline">Senior Site Reliability Engineer</p>
     <p>
       Senior SRE with 10+ years of progressive infrastructure experience, including
@@ -78,6 +78,33 @@ const timeline = [
   .tagline {
     color: var(--muted);
     font-size: 1.1rem;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0.55ch;
+    height: 1em;
+    margin-left: 0.15em;
+    background: var(--accent);
+    vertical-align: -0.15em;
+    animation: blink 1s step-end infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    50.01%,
+    100% {
+      opacity: 0;
+    }
   }
 
   .timeline ol {
