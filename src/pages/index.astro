@@ -32,9 +32,20 @@ const timeline = [
 
 <Base title="Jordan English">
   <section class="about">
-    <p class="prompt">$ whoami</p>
-    <h1>Jordan English<span class="cursor" aria-hidden="true"></span></h1>
-    <p class="tagline">Senior Site Reliability Engineer</p>
+    <div class="identity">
+      <img
+        class="avatar"
+        src={`${import.meta.env.BASE_URL}profile.jpg`}
+        alt="Jordan English"
+        width="96"
+        height="96"
+      />
+      <div>
+        <p class="prompt">$ whoami</p>
+        <h1>Jordan English<span class="cursor" aria-hidden="true"></span></h1>
+        <p class="tagline">Senior Site Reliability Engineer</p>
+      </div>
+    </div>
     <p>
       Senior SRE with 10+ years of progressive infrastructure experience, including
       4+ years at ID.me building and operating the core platform that supports
@@ -69,6 +80,26 @@ const timeline = [
 </Base>
 
 <style>
+  .identity {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 4px;
+    border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .identity .prompt {
+    margin-top: 0;
+  }
+
   .prompt {
     color: var(--accent);
     margin: 0 0 0.25rem;
