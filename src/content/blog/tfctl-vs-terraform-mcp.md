@@ -2,6 +2,7 @@
 title: "tfctl vs the Terraform MCP: which is more token-efficient?"
 description: "Measuring how many tokens a CLI-plus-jq workflow costs an AI agent versus an MCP server, for the same Terraform Enterprise operations."
 eyebrow: "AI Agents / Terraform Enterprise"
+ogImage: "/cv/blog/tfctl-vs-mcp/og-card.png"
 meta:
   - "Scope: TFE workspaces, runs, variable sets"
   - "Method: real byte counts (wc -c), read-only calls"

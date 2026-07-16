@@ -14,7 +14,12 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Base title={post.data.title} description={post.data.description}>
+<Base
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+  ogImageAlt={post.data.ogImage ? post.data.title : undefined}
+>
   <article>
     {post.data.eyebrow && <p class="eyebrow">{post.data.eyebrow}</p>}
     <h1>{post.data.title}</h1>
