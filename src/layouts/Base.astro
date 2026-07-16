@@ -75,6 +75,7 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}profile.jpg`, Astro.site).hr
     --bg: #0d1117;
     --muted: #8b949e;
     --accent: #3fb950;
+    --accent-2: #58a6ff;
   }
 
   @media (prefers-color-scheme: light) {
@@ -83,6 +84,7 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}profile.jpg`, Astro.site).hr
       --bg: #f6f8fa;
       --muted: #57606a;
       --accent: #1a7f37;
+      --accent-2: #0969da;
     }
   }
 
@@ -107,6 +109,12 @@ const ogImage = new URL(`${import.meta.env.BASE_URL}profile.jpg`, Astro.site).hr
 
   a {
     color: var(--accent);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 
   .site-header {

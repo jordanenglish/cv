@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 678" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+
+  <style>
+    .surface { fill: #f6f8fa; }
+    .grid { stroke: #d8dee4; }
+    .axis { stroke: #a8b1ba; }
+    .fg { fill: #1f2328; }
+    .muted { fill: #57606a; }
+    text { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace; }
+    @media (prefers-color-scheme: dark) {
+      .surface { fill: #0d1117; }
+      .grid { stroke: #21262d; }
+      .axis { stroke: #30363d; }
+      .fg { fill: #e6edf3; }
+      .muted { fill: #8b949e; }
+    }
+  </style>
+
+<style>.bv0 { fill: #a89f24; }
+.bv1 { fill: #f8b219; }
+.bv2 { fill: #d34438; }
+.bv3 { fill: #e9ae1b; }
+.bv4 { fill: #2b8335; }
+.bv5 { fill: #f39e1f; }
+.bv6 { fill: #ed8e23; }
+.bv7 { fill: #f29c1f; }
+.bv8 { fill: #979c26; }
+.bv9 { fill: #f6a71c; }
+.bv10 { fill: #df662f; }
+.bv11 { fill: #4e8b30; }
+.bv12 { fill: #b5a222; }
+.bv13 { fill: #f19a20; }
+.bv14 { fill: #e7ae1c; }
+@media (prefers-color-scheme: dark) {.bv0 { fill: #b6b52d; }
+.bv1 { fill: #f8b219; }
+.bv2 { fill: #d34438; }
+.bv3 { fill: #ecb31d; }
+.bv4 { fill: #4eb84c; }
+.bv5 { fill: #f39e1f; }
+.bv6 { fill: #ed8e23; }
+.bv7 { fill: #f29c1f; }
+.bv8 { fill: #a8b531; }
+.bv9 { fill: #f6a71c; }
+.bv10 { fill: #df662f; }
+.bv11 { fill: #6ab743; }
+.bv12 { fill: #c1b42a; }
+.bv13 { fill: #f19a20; }
+.bv14 { fill: #eab31e; }
+}</style>
+  <rect x="0" y="0" width="680" height="678" class="surface" />
+  <text x="90" y="16" font-size="14" class="muted">Bytes returned per task, log scale (green = smaller, red = larger)</text>
+  <line x1="121.25" y1="30" x2="121.25" y2="612" class="grid" stroke-width="1" /><text x="121.25" y="632" text-anchor="middle" font-size="12" class="muted">100</text><line x1="277.5" y1="30" x2="277.5" y2="612" class="grid" stroke-width="1" /><text x="277.5" y="632" text-anchor="middle" font-size="12" class="muted">1K</text><line x1="433.75" y1="30" x2="433.75" y2="612" class="grid" stroke-width="1" /><text x="433.75" y="632" text-anchor="middle" font-size="12" class="muted">10K</text><line x1="590" y1="30" x2="590" y2="612" class="grid" stroke-width="1" /><text x="590" y="632" text-anchor="middle" font-size="12" class="muted">100K</text>
+  <text x="90" y="44" font-size="13" class="fg" font-weight="700">List 10 workspaces</text><text x="80" y="69" text-anchor="end" font-size="11" class="fg" font-weight="700">--jq</text><rect x="90" y="58" width="158.99458899371572" height="14" rx="4" class="bv0" /><text x="256.99458899371575" y="69" font-size="11" class="fg" font-weight="700">657 B</text><text x="80" y="95" text-anchor="end" font-size="11" class="muted" font-weight="400">table</text><rect x="90" y="84" width="247.75098024973624" height="14" rx="4" class="bv1" /><text x="345.75098024973624" y="95" font-size="11" class="muted" font-weight="400">2,430 B</text><text x="80" y="121" text-anchor="end" font-size="11" class="muted" font-weight="400">--json</text><rect x="90" y="110" width="480.04809565096343" height="14" rx="4" class="bv2" /><text x="578.0480956509634" y="121" font-size="11" class="muted" font-weight="400">74,526 B</text><text x="80" y="147" text-anchor="end" font-size="11" class="muted" font-weight="400">MCP</text><rect x="90" y="136" width="231.4469823523458" height="14" rx="4" class="bv3" /><text x="329.4469823523458" y="147" font-size="11" class="muted" font-weight="400">1,911 B</text><text x="90" y="196" font-size="13" class="fg" font-weight="700">One workspace's details</text><text x="80" y="221" text-anchor="end" font-size="11" class="fg" font-weight="700">--jq</text><rect x="90" y="210" width="19.418638447168988" height="14" rx="4" class="bv4" /><text x="117.41863844716899" y="221" font-size="11" class="fg" font-weight="700">84 B</text><text x="80" y="247" text-anchor="end" font-size="11" class="muted" font-weight="400">table</text><rect x="90" y="236" width="292.10981782880356" height="14" rx="4" class="bv5" /><text x="390.10981782880356" y="247" font-size="11" class="muted" font-weight="400">4,672 B</text><text x="80" y="273" text-anchor="end" font-size="11" class="muted" font-weight="400">--json</text><rect x="90" y="262" width="325.2430984052049" height="14" rx="4" class="bv6" /><text x="423.2430984052049" y="273" font-size="11" class="muted" font-weight="400">7,613 B</text><text x="80" y="299" text-anchor="end" font-size="11" class="muted" font-weight="400">MCP</text><rect x="90" y="288" width="296.76832828459095" height="14" rx="4" class="bv7" /><text x="394.76832828459095" y="299" font-size="11" class="muted" font-weight="400">5,004 B</text><text x="90" y="348" font-size="13" class="fg" font-weight="700">Last 5 runs on a workspace</text><text x="80" y="373" text-anchor="end" font-size="11" class="fg" font-weight="700">--jq</text><rect x="90" y="362" width="139.78206233337013" height="14" rx="4" class="bv8" /><text x="237.78206233337013" y="373" font-size="11" class="fg" font-weight="700">495 B</text><text x="80" y="399" text-anchor="end" font-size="11" class="muted" font-weight="400">table</text><rect x="90" y="388" width="273.7402649007558" height="14" rx="4" class="bv9" /><text x="371.7402649007558" y="399" font-size="11" class="muted" font-weight="400">3,564 B</text><text x="80" y="425" text-anchor="end" font-size="11" class="muted" font-weight="400">--json</text><rect x="90" y="414" width="408.8552789584253" height="14" rx="4" class="bv10" /><text x="506.8552789584253" y="425" font-size="11" class="muted" font-weight="400">26,102 B</text><text x="80" y="451" text-anchor="end" font-size="11" class="muted" font-weight="400">MCP</text><text x="96" y="451" font-size="11" font-style="italic" class="muted">empty response</text><text x="90" y="500" font-size="13" class="fg" font-weight="700">List variable sets</text><text x="80" y="525" text-anchor="end" font-size="11" class="fg" font-weight="700">--jq</text><rect x="90" y="514" width="57.85339303046209" height="14" rx="4" class="bv11" /><text x="155.8533930304621" y="525" font-size="11" class="fg" font-weight="700">148 B</text><text x="80" y="551" text-anchor="end" font-size="11" class="muted" font-weight="400">table</text><rect x="90" y="540" width="173.20078419978893" height="14" rx="4" class="bv12" /><text x="271.2007841997889" y="551" font-size="11" class="muted" font-weight="400">810 B</text><text x="80" y="577" text-anchor="end" font-size="11" class="muted" font-weight="400">--json</text><rect x="90" y="566" width="301.2672162656782" height="14" rx="4" class="bv13" /><text x="399.2672162656782" y="577" font-size="11" class="muted" font-weight="400">5,347 B</text><text x="80" y="603" text-anchor="end" font-size="11" class="muted" font-weight="400">MCP</text><rect x="90" y="592" width="229.06193288985605" height="14" rx="4" class="bv14" /><text x="327.06193288985605" y="603" font-size="11" class="muted" font-weight="400">1,845 B</text>
+</svg>

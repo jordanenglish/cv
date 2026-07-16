@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 234" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+
+  <style>
+    .surface { fill: #f6f8fa; }
+    .grid { stroke: #d8dee4; }
+    .axis { stroke: #a8b1ba; }
+    .fg { fill: #1f2328; }
+    .muted { fill: #57606a; }
+    text { font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace; }
+    @media (prefers-color-scheme: dark) {
+      .surface { fill: #0d1117; }
+      .grid { stroke: #21262d; }
+      .axis { stroke: #30363d; }
+      .fg { fill: #e6edf3; }
+      .muted { fill: #8b949e; }
+    }
+  </style>
+
+<style>.bv0 { fill: #368533; }
+.bv1 { fill: #daab1d; }
+.bv2 { fill: #d74e35; }
+@media (prefers-color-scheme: dark) {.bv0 { fill: #57b849; }
+.bv1 { fill: #dfb321; }
+.bv2 { fill: #d74e35; }
+}</style>
+  <rect x="0" y="0" width="640" height="234" class="surface" />
+  <text x="150" y="24" font-size="14" class="muted">List 5 workspace names, by approach (log scale)</text>
+  
+      <line x1="180" y1="34" x2="180" y2="169" class="grid" stroke-width="1" />
+      <text x="180" y="206" text-anchor="middle" font-size="12" class="muted">100</text>
+    
+      <line x1="330" y1="34" x2="330" y2="169" class="grid" stroke-width="1" />
+      <text x="330" y="206" text-anchor="middle" font-size="12" class="muted">1K</text>
+    
+      <line x1="480.00000000000006" y1="34" x2="480.00000000000006" y2="169" class="grid" stroke-width="1" />
+      <text x="480.00000000000006" y="206" text-anchor="middle" font-size="12" class="muted">10K</text>
+    
+  <line x1="150" y1="34" x2="150" y2="169" class="axis" stroke-width="1" />
+  
+      <text x="136" y="74" text-anchor="end" font-size="14" class="fg" font-weight="700">tfctl --jq</text>
+      <rect x="150" y="59" width="26.658540793327177" height="20" rx="4" class="bv0" />
+      <text x="186.65854079332718" y="74" font-size="14" class="fg" font-weight="700">95 B</text>
+    
+      <text x="136" y="120" text-anchor="end" font-size="14" class="muted" font-weight="400">tfctl (table)</text>
+      <rect x="150" y="105" width="180" height="20" rx="4" class="bv1" />
+      <text x="340" y="120" font-size="14" class="fg" font-weight="400">~1,000 B</text>
+    
+      <text x="136" y="166" text-anchor="end" font-size="14" class="muted" font-weight="400">tfctl --json</text>
+      <rect x="150" y="151" width="385.6795810983442" height="20" rx="4" class="bv2" />
+      <text x="545.6795810983442" y="166" font-size="14" class="fg" font-weight="400">23,507 B</text>
+    
+</svg>
