@@ -62,14 +62,16 @@ A few observations:
 
 ## 5. Decision matrix
 
-Map the task to the tool:
+Map the task to the tool.
 
-- **Inspect state, runs, workspaces, variables** → **CLI**. Zero context tax; trim output with `--jq`.
-- **Bulk list where you need a few fields** → **CLI `--jq`**. ~250x smaller than raw JSON.
-- **An endpoint no tool wraps** → **`tfctl api`**. Only option; MCP covers a curated subset.
-- **Provider / module / policy docs** → **Terraform MCP**. Registry knowledge; the CLI cannot do it.
-- **Latest provider / module version** → **Terraform MCP**. Purpose-built lookup for authoring.
-- **Mutations (runs, variables, deletes)** → **CLI**. Always dry-run first or confirm.
+| Task | Reach for | Why |
+| --- | --- | --- |
+| Inspect state, runs, workspaces, variables | <span class="tool-badge tool-cli">tfctl</span> | Zero context tax; trim output with `--jq` |
+| Bulk list where you need a few fields | <span class="tool-badge tool-cli">tfctl --jq</span> | ~250x smaller than raw JSON |
+| An endpoint no tool wraps | <span class="tool-badge tool-cli">tfctl api</span> | Only option; MCP covers a curated subset |
+| Provider / module / policy docs | <span class="tool-badge tool-mcp">Terraform MCP</span> | Registry knowledge; the CLI cannot do it |
+| Latest provider / module version | <span class="tool-badge tool-mcp">Terraform MCP</span> | Purpose-built lookup for authoring |
+| Mutations (runs, variables, deletes) | <span class="tool-badge tool-cli">tfctl</span> | Always dry-run first or confirm |
 
 ## The takeaway
 
