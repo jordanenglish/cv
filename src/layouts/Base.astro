@@ -19,6 +19,16 @@ const isLargeImage = Boolean(ogImagePath);
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'light' || stored === 'dark') {
+            document.documentElement.dataset.theme = stored;
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -62,6 +72,32 @@ const isLargeImage = Boolean(ogImagePath);
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
           </svg>
         </a>
+        <button
+          id="theme-toggle"
+          class="icon-link theme-toggle"
+          type="button"
+          aria-label="Toggle color theme"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+            <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+              <line x1="12" y1="1.5" x2="12" y2="4" />
+              <line x1="12" y1="20" x2="12" y2="22.5" />
+              <line x1="1.5" y1="12" x2="4" y2="12" />
+              <line x1="20" y1="12" x2="22.5" y2="12" />
+              <line x1="4.4" y1="4.4" x2="6.1" y2="6.1" />
+              <line x1="17.9" y1="17.9" x2="19.6" y2="19.6" />
+              <line x1="4.4" y1="19.6" x2="6.1" y2="17.9" />
+              <line x1="17.9" y1="6.1" x2="19.6" y2="4.4" />
+            </g>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-4.476 0-8.103-3.627-8.103-8.103 0-1.483.399-2.873 1.096-4.067a.5.5 0 0 0-.577-.727C6.163 1.98 2.5 6.245 2.5 11.39 2.5 17.238 7.262 22 13.11 22c4.472 0 8.302-2.783 9.845-6.71a.5.5 0 0 0-.577-.673 8.06 8.06 0 0 1-1.636.428Z"
+            />
+          </svg>
+        </button>
       </nav>
     </header>
     <main>
@@ -70,22 +106,44 @@ const isLargeImage = Boolean(ogImagePath);
     <footer class="site-footer">
       <p>&copy; {new Date().getFullYear()}</p>
     </footer>
+    <script is:inline>
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var root = document.documentElement;
+          var current =
+            root.dataset.theme ||
+            (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          var next = current === 'dark' ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch (e) {}
+        });
+      })();
+    </script>
   </body>
 </html>
 
 <style is:global>
   :root {
-    color-scheme: dark light;
+    color-scheme: dark;
     --max-width: 42rem;
     --fg: #e6edf3;
     --bg: #0d1117;
     --muted: #8b949e;
     --accent: #3fb950;
     --accent-2: #58a6ff;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, 'Liberation Mono',
+      monospace;
   }
 
   @media (prefers-color-scheme: light) {
-    :root {
+    :root:not([data-theme]) {
+      color-scheme: light;
       --fg: #1f2328;
       --bg: #f6f8fa;
       --muted: #57606a;
@@ -94,17 +152,40 @@ const isLargeImage = Boolean(ogImagePath);
     }
   }
 
+  :root[data-theme='light'] {
+    color-scheme: light;
+    --fg: #1f2328;
+    --bg: #f6f8fa;
+    --muted: #57606a;
+    --accent: #1a7f37;
+    --accent-2: #0969da;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --fg: #e6edf3;
+    --bg: #0d1117;
+    --muted: #8b949e;
+    --accent: #3fb950;
+    --accent-2: #58a6ff;
+  }
+
   * {
     box-sizing: border-box;
   }
 
   body {
     margin: 0;
-    font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, 'Liberation Mono',
-      monospace;
+    font-family: var(--font-sans);
     color: var(--fg);
     background: var(--bg);
     line-height: 1.6;
+  }
+
+  code,
+  pre,
+  kbd {
+    font-family: var(--font-mono);
   }
 
   main {
@@ -157,6 +238,47 @@ const isLargeImage = Boolean(ogImagePath);
 
   .site-header nav a.icon-link:hover {
     color: var(--accent);
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    color: var(--muted);
+  }
+
+  .theme-toggle:hover {
+    color: var(--accent);
+  }
+
+  .theme-toggle .icon-moon {
+    display: none;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) .theme-toggle .icon-sun {
+      display: none;
+    }
+    :root:not([data-theme]) .theme-toggle .icon-moon {
+      display: block;
+    }
+  }
+
+  :root[data-theme='light'] .theme-toggle .icon-sun {
+    display: none;
+  }
+  :root[data-theme='light'] .theme-toggle .icon-moon {
+    display: block;
+  }
+
+  :root[data-theme='dark'] .theme-toggle .icon-sun {
+    display: block;
+  }
+  :root[data-theme='dark'] .theme-toggle .icon-moon {
+    display: none;
   }
 
   .site-footer {
